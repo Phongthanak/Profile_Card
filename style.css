@@ -1,0 +1,151 @@
+:root{
+    --primary-color: #4daf54;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(to right, #4daf54, #3d8880);
+}
+.card{
+    margin: 120px auto;
+    width: 320px;
+    height: 400px;
+    background-color: #272d40;
+    border-radius: 8px;
+    padding: 16px;
+    color: white;
+    position: relative;
+}
+.card_heart,
+.card_cart {
+    font-size: 25px;
+    position: absolute;
+    left: 16px;
+    top:16px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.card_cart{
+    left: unset;
+    right: 16px;
+}
+
+.card_img{
+  height: 50%; 
+  position: relative; 
+  cursor: pointer;
+}
+.card_img img{
+    width: 80%;
+    height: 125%;
+    object-fit: cover;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.card_title{
+    color: var(--primary-color);
+    
+}
+.card_title,
+.card_price{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card_size span{
+    padding: 1px 6px;
+    background-color:antiquewhite;
+    color: black;
+    margin: 0 2px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card_size,
+.card_color{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.card_color span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+
+}
+.card_color .card_color--green{
+    background-color: green;
+}
+
+.card_color .card_color--red{
+    background-color: red;
+}
+
+.card_color .card_color--black{
+    background-color: black;
+}
+.card_img{
+    transition: 0.5s;
+}
+.card_action button{
+    padding: 5px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-right: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.card_action button:hover {
+    transform: scale(0.9);
+}
+.card:hover .card_img{
+    transform: translateY(-91px) rotate(-17deg) ;
+}
+.card:hover .card_title
+{
+    transform: translate(-46px,-70px) ;
+}
+.card:hover .card_price{
+    transform: translate(-123px,-70px);
+}
+
+.card_size{
+    margin-top: 150px;
+}
+.card_size,
+.card_action,
+.card_color{
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.4s;
+}
+.card:hover .card_size{
+    margin-top: -30px;
+}
+.card:hover .card_size,
+.card:hover .card_color,
+.card:hover .card_action{
+    visibility: inherit;
+    opacity: 1;
+}
